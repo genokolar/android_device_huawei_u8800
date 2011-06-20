@@ -95,12 +95,14 @@ TARGET_PREBUILT_KERNEL := device/huawei/u8800/kernel
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION      := VER_0_6_X
-BOARD_WLAN_DEVICE           := bcm4329
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
-WIFI_DRIVER_FW_STA_PATH     := "/vendor/firmware/fw_bcm4329.bin"
-WIFI_DRIVER_FW_AP_PATH      := "/vendor/firmware/fw_bcm4329_apsta.bin"
-WIFI_DRIVER_MODULE_ARG      := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration"
-WIFI_DRIVER_MODULE_NAME     := "bcm4329"
+BOARD_WLAN_DEVICE           := libra
+WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/libra.ko"
+#The next 3 lines need replacing with appropriate firmware paths for the libra wifi chip used in the U8800.
+#Using bcm4329 is wrong and is the reason WiFi doesn't work.
+#WIFI_DRIVER_FW_STA_PATH     := "/vendor/firmware/fw_bcm4329.bin" 
+#WIFI_DRIVER_FW_AP_PATH      := "/vendor/firmware/fw_bcm4329_apsta.bin"
+#WIFI_DRIVER_MODULE_ARG      := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration"
+WIFI_DRIVER_MODULE_NAME     := "libra"
 
 # SDCard
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
